@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krislaw Kitchen — A Kitchen with a Mandate</title>
+<meta property="og:title" content="Krislaw Kitchen — A Kitchen with a Mandate" />
+<meta property="og:description" content="Quality, quantity and speed. Visit any of our 3 branches in Ekiti and Kwara State. Dine-in, takeaway and drive-through available." />
+<meta property="og:image" content="https://semex-eng.github.io/Krislaw-Kitchen-/logo.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://semex-eng.github.io/Krislaw-Kitchen-/krislaw_kitchen.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://semex-eng.github.io/Krislaw-Kitchen-/logo.jpg" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #8B1A1A;
+    --red-dark: #6B1212;
+    --red-light: #C2392A;
+    --gold: #C9933A;
+    --gold-light: #E8B55A;
+    --cream: #FAF6F0;
+    --cream-dark: #F0E9DF;
+    --charcoal: #1C1C1C;
+    --charcoal-mid: #2E2E2E;
+    --gray: #6B6560;
+    --gray-light: #B8B0A8;
+    --white: #FFFFFF;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Jost', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--charcoal);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(28,28,28,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201,147,58,0.2);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 62px;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--gold-light);
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .nav-logo span { color: var(--white); font-style: italic; }
+  .nav-links { display: flex; gap: 0; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0 16px;
+    height: 62px;
+    display: flex; align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold);
+  }
+  .nav-cta {
+    background: var(--red);
+    color: white !important;
+    border-radius: 4px;
+    padding: 0 20px !important;
+    height: 36px !important;
+    border-bottom: none !important;
+    margin-left: 12px;
+    font-size: 12px !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--red-light) !important; color: white !important; }
+
+  /* ─── PAGES ─── */
+  .page { display: none; padding-top: 62px; min-height: 100vh; animation: fadeIn 0.3s ease; }
+  .page.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--charcoal);
+    min-height: calc(100vh - 62px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    position: relative; overflow: hidden;
+    padding: 4rem 2rem;
+  }
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(201,147,58,0.04) 60px, rgba(201,147,58,0.04) 61px),
+      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(201,147,58,0.04) 60px, rgba(201,147,58,0.04) 61px);
+  }
+  .hero-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .hero-tag {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem; position: relative;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-tag::before, .hero-tag::after { content: ''; width: 30px; height: 1px; background: var(--gold); opacity: 0.6; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8vw, 88px);
+    color: var(--white); line-height: 1.05;
+    margin-bottom: 0.5rem; position: relative;
+  }
+  .hero h1 em { color: var(--gold-light); font-style: italic; }
+  .hero-subtitle {
+    font-size: 14px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gray-light); margin-bottom: 2.5rem; position: relative;
+  }
+  .hero-badges {
+    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 3rem; position: relative;
+  }
+  .hero-badge {
+    border: 1px solid rgba(201,147,58,0.4);
+    color: rgba(255,255,255,0.8);
+    border-radius: 2px; padding: 6px 16px; font-size: 12px; letter-spacing: 1px;
+  }
+  .hero-badge.live {
+    background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.4); color: #86efac;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .live-dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; position: relative; }
+  .btn-primary {
+    background: var(--red); color: white; border: none; cursor: pointer;
+    font-family: var(--font-body); font-size: 13px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 14px 36px; border-radius: 2px; transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--red-light); }
+  .btn-outline {
+    background: transparent; color: var(--gold-light);
+    border: 1px solid var(--gold); cursor: pointer;
+    font-family: var(--font-body); font-size: 13px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 14px 36px; border-radius: 2px; transition: all 0.2s;
+  }
+  .btn-outline:hover { background: rgba(201,147,58,0.1); }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--red-dark);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-bottom: 3px solid var(--gold);
+  }
+  .stat {
+    padding: 1.5rem 1rem; text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-family: var(--font-display); font-size: 28px; color: var(--gold-light); font-weight: 700; }
+  .stat-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-header { text-align: center; padding: 4rem 2rem 2.5rem; }
+  .section-eyebrow {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .section-eyebrow::before, .section-eyebrow::after { content: ''; width: 24px; height: 1px; background: var(--gold); opacity: 0.5; }
+  .section-title { font-family: var(--font-display); font-size: clamp(28px, 5vw, 44px); color: var(--charcoal); line-height: 1.2; }
+  .section-title em { color: var(--red); }
+  .section-body { max-width: 540px; margin: 1rem auto 0; color: var(--gray); font-size: 15px; }
+
+  /* ─── ABOUT PAGE ─── */
+  .about-hero {
+    background: var(--charcoal-mid);
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+  .about-hero h1 { font-family: var(--font-display); font-size: clamp(36px,6vw,64px); color: white; }
+  .about-hero h1 em { color: var(--gold-light); }
+  .about-hero p { color: rgba(255,255,255,0.65); font-size: 16px; max-width: 560px; margin: 1.25rem auto 0; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 1000px; margin: 0 auto; }
+  .about-block {
+    padding: 3rem 2.5rem;
+    border: 0.5px solid rgba(0,0,0,0.08);
+  }
+  .about-block:nth-child(odd) { background: var(--white); }
+  .about-block:nth-child(even) { background: var(--cream-dark); }
+  .about-icon { font-size: 36px; margin-bottom: 1rem; }
+  .about-block h3 { font-family: var(--font-display); font-size: 22px; margin-bottom: 0.75rem; color: var(--charcoal); }
+  .about-block p { color: var(--gray); line-height: 1.7; }
+  .values-section { background: var(--red-dark); padding: 4rem 2rem; text-align: center; }
+  .values-section h2 { font-family: var(--font-display); font-size: 36px; color: var(--gold-light); margin-bottom: 2.5rem; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 800px; margin: 0 auto; }
+  .value-card { border: 1px solid rgba(201,147,58,0.3); border-radius: 4px; padding: 1.5rem; }
+  .value-card h4 { color: var(--gold-light); font-size: 16px; font-weight: 600; letter-spacing: 1px; margin-bottom: 0.5rem; }
+  .value-card p { color: rgba(255,255,255,0.65); font-size: 14px; }
+
+  /* ─── MENU PAGE ─── */
+  .menu-hero {
+    background: var(--charcoal); padding: 4rem 2rem 3rem; text-align: center;
+    border-bottom: 3px solid var(--gold);
+  }
+  .menu-hero h1 { font-family: var(--font-display); font-size: clamp(36px,6vw,60px); color: white; }
+  .menu-hero h1 em { color: var(--gold-light); }
+  .menu-hero p { color: rgba(255,255,255,0.6); margin-top: 0.75rem; font-size: 14px; letter-spacing: 1px; }
+  .menu-branch-tabs {
+    background: var(--white);
+    display: flex; justify-content: center; gap: 0;
+    border-bottom: 2px solid var(--cream-dark);
+    overflow-x: auto;
+  }
+  .menu-tab {
+    padding: 14px 28px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    cursor: pointer; border: none; background: none; color: var(--gray);
+    border-bottom: 2px solid transparent; margin-bottom: -2px;
+    white-space: nowrap; transition: all 0.2s;
+  }
+  .menu-tab.active { color: var(--red); border-bottom-color: var(--red); }
+  .menu-tab:hover:not(.active) { color: var(--charcoal); }
+  .menu-content { display: none; }
+  .menu-content.active { display: block; }
+  .menu-section { max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem; }
+  .menu-category { margin-bottom: 2.5rem; }
+  .menu-cat-title {
+    font-family: var(--font-display); font-size: 22px; color: var(--red);
+    margin-bottom: 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .menu-cat-title::after { content: ''; flex: 1; height: 1px; background: var(--cream-dark); }
+  .menu-item {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding: 12px 0; border-bottom: 1px dashed rgba(0,0,0,0.06);
+  }
+  .menu-item:last-child { border-bottom: none; }
+  .item-info { flex: 1; }
+  .item-name { font-weight: 600; font-size: 15px; margin-bottom: 2px; }
+  .item-desc { font-size: 13px; color: var(--gray); }
+  .item-price { font-family: var(--font-display); font-size: 17px; color: var(--red); font-weight: 700; white-space: nowrap; margin-left: 1rem; }
+  .menu-note {
+    background: linear-gradient(135deg, #FFF8F0, #FFF3E8);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.25rem; border-radius: 0 4px 4px 0;
+    font-size: 13px; color: var(--gray); margin-bottom: 2rem;
+  }
+
+  /* ─── BRANCHES PAGE ─── */
+  .branches-hero { background: var(--charcoal); padding: 4rem 2rem 3rem; text-align: center; border-bottom: 3px solid var(--gold); }
+  .branches-hero h1 { font-family: var(--font-display); font-size: clamp(36px,6vw,60px); color: white; }
+  .branches-hero h1 em { color: var(--gold-light); }
+  .branches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 0; max-width: 1000px; margin: 3rem auto; padding: 0 2rem; gap: 1.5rem; }
+  .branch-card-full {
+    background: var(--white); border-radius: 6px;
+    overflow: hidden; border: 1px solid rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .branch-card-full:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+  .branch-card-header { background: var(--red-dark); padding: 1.5rem; color: white; position: relative; }
+  .branch-card-header h3 { font-family: var(--font-display); font-size: 22px; }
+  .branch-card-header p { font-size: 13px; opacity: 0.75; margin-top: 3px; }
+  .branch-rating { position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.3); border-radius: 4px; padding: 4px 10px; font-size: 13px; }
+  .branch-rating span { color: var(--gold-light); font-weight: 600; }
+  .branch-details { padding: 1.25rem; }
+  .branch-detail-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--cream-dark); font-size: 14px; }
+  .branch-detail-row:last-child { border-bottom: none; }
+  .detail-icon { color: var(--red); width: 18px; flex-shrink: 0; margin-top: 2px; }
+  .detail-label { color: var(--gray); font-size: 12px; }
+  .detail-value { color: var(--charcoal); font-weight: 500; }
+  .branch-tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 1rem 1.25rem 1.25rem; }
+  .tag {
+    background: var(--cream); border: 1px solid var(--cream-dark);
+    border-radius: 2px; padding: 4px 10px; font-size: 12px; color: var(--gray);
+    letter-spacing: 0.5px;
+  }
+
+  /* ─── RESERVATIONS PAGE ─── */
+  .res-hero { background: var(--charcoal); padding: 4rem 2rem 3rem; text-align: center; border-bottom: 3px solid var(--gold); }
+  .res-hero h1 { font-family: var(--font-display); font-size: clamp(36px,6vw,60px); color: white; }
+  .res-hero h1 em { color: var(--gold-light); }
+  .res-hero p { color: rgba(255,255,255,0.6); margin-top: 0.75rem; }
+  .res-container { max-width: 720px; margin: 3rem auto; padding: 0 2rem 4rem; }
+  .res-form {
+    background: var(--white); border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .res-form-header { background: var(--red-dark); padding: 1.5rem 2rem; color: white; }
+  .res-form-header h3 { font-family: var(--font-display); font-size: 22px; }
+  .res-form-header p { font-size: 13px; opacity: 0.75; margin-top: 4px; }
+  .res-form-body { padding: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 10px 14px;
+    border: 1px solid rgba(0,0,0,0.15); border-radius: 4px;
+    font-family: var(--font-body); font-size: 14px; color: var(--charcoal);
+    background: var(--cream); transition: border-color 0.2s, background 0.2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--red); background: white;
+  }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .guests-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .guest-opt {
+    flex: 1; min-width: 50px; text-align: center;
+    border: 1px solid rgba(0,0,0,0.15); border-radius: 4px;
+    padding: 10px 8px; font-size: 14px; cursor: pointer;
+    background: var(--cream); transition: all 0.15s; color: var(--charcoal);
+  }
+  .guest-opt.selected { background: var(--red); color: white; border-color: var(--red); }
+  .time-slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .time-slot {
+    border: 1px solid rgba(0,0,0,0.15); border-radius: 4px;
+    padding: 8px; font-size: 13px; text-align: center; cursor: pointer;
+    background: var(--cream); transition: all 0.15s; color: var(--charcoal);
+  }
+  .time-slot.selected { background: var(--red); color: white; border-color: var(--red); }
+  .time-slot.unavailable { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
+  .submit-btn {
+    width: 100%; background: var(--red); color: white; border: none;
+    padding: 15px; font-family: var(--font-body); font-size: 13px;
+    font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    border-radius: 4px; cursor: pointer; margin-top: 0.5rem;
+    transition: background 0.2s;
+  }
+  .submit-btn:hover { background: var(--red-light); }
+  .res-info { margin-top: 2rem; }
+  .res-info-card {
+    background: linear-gradient(135deg, #FFF8F0, #FFF3E8);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.25rem; border-radius: 0 4px 4px 0; margin-bottom: 1rem;
+  }
+  .res-info-card h4 { font-size: 13px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+  .res-info-card p { font-size: 13px; color: var(--gray); }
+  .success-msg {
+    display: none; background: #F0FDF4; border: 1px solid #86efac;
+    border-radius: 4px; padding: 1.5rem; text-align: center; margin-top: 1rem;
+  }
+  .success-msg h4 { color: #166534; font-family: var(--font-display); font-size: 20px; margin-bottom: 0.5rem; }
+  .success-msg p { color: #166534; font-size: 14px; }
+
+  /* ─── GALLERY PAGE ─── */
+  .gallery-hero { background: var(--charcoal); padding: 4rem 2rem 3rem; text-align: center; border-bottom: 3px solid var(--gold); }
+  .gallery-hero h1 { font-family: var(--font-display); font-size: clamp(36px,6vw,60px); color: white; }
+  .gallery-hero h1 em { color: var(--gold-light); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 6px; padding: 2rem;
+    max-width: 1000px; margin: 0 auto;
+  }
+  .gallery-item {
+    border-radius: 4px; overflow: hidden; position: relative; cursor: pointer;
+    background: var(--charcoal-mid); aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s;
+  }
+  .gallery-item:hover { transform: scale(0.98); }
+  .gallery-item.featured { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+  .gallery-placeholder {
+    width: 100%; height: 100%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 8px;
+    font-size: 36px; color: rgba(255,255,255,0.2);
+  }
+  .gallery-placeholder span { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); font-family: var(--font-body); }
+  .gallery-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 1.5rem 1rem 0.75rem; color: white; font-size: 13px;
+  }
+  .g1 { background: linear-gradient(135deg, #5C1010, #8B1A1A); }
+  .g2 { background: linear-gradient(135deg, #2E1A06, #6B4513); }
+  .g3 { background: linear-gradient(135deg, #0A2E1A, #1A5C32); }
+  .g4 { background: linear-gradient(135deg, #1A1A40, #2E2E80); }
+  .g5 { background: linear-gradient(135deg, #2E2E2E, #4A4A4A); }
+  .g6 { background: linear-gradient(135deg, #401A00, #803200); }
+  .g7 { background: linear-gradient(135deg, #1A2E0A, #2E5C14); }
+
+  /* ─── CONTACT PAGE ─── */
+  .contact-hero { background: var(--charcoal); padding: 4rem 2rem 3rem; text-align: center; border-bottom: 3px solid var(--gold); }
+  .contact-hero h1 { font-family: var(--font-display); font-size: clamp(36px,6vw,60px); color: white; }
+  .contact-hero h1 em { color: var(--gold-light); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; max-width: 900px; margin: 3rem auto; padding: 0 2rem 4rem; }
+  .contact-info h2 { font-family: var(--font-display); font-size: 26px; margin-bottom: 1.5rem; }
+  .contact-row {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 1rem 0; border-bottom: 1px solid var(--cream-dark);
+  }
+  .contact-row:last-of-type { border-bottom: none; }
+  .contact-icon {
+    width: 36px; height: 36px; background: var(--red);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 16px; flex-shrink: 0;
+  }
+  .contact-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 2px; }
+  .contact-value { font-weight: 500; font-size: 14px; color: var(--charcoal); }
+  .social-links { margin-top: 1.5rem; }
+  .social-links h4 { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 0.75rem; }
+  .social-row { display: flex; gap: 10px; }
+  .social-link {
+    display: flex; align-items: center; gap: 7px;
+    background: var(--charcoal); color: var(--gold-light);
+    border-radius: 4px; padding: 8px 14px; font-size: 13px;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .social-link:hover { background: var(--red-dark); }
+  .contact-form-wrap { background: var(--white); border-radius: 6px; border: 1px solid rgba(0,0,0,0.08); padding: 2rem; }
+  .contact-form-wrap h3 { font-family: var(--font-display); font-size: 22px; margin-bottom: 1.5rem; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--charcoal); color: rgba(255,255,255,0.5);
+    text-align: center; padding: 2rem;
+    font-size: 13px; border-top: 1px solid rgba(201,147,58,0.2);
+  }
+  footer strong { color: var(--gold-light); }
+
+  /* ─── HOME FEATURES ─── */
+  .features { padding: 3rem 2rem 4rem; background: var(--white); }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 0; max-width: 860px; margin: 2rem auto 0; }
+  .feature-item { padding: 2rem 1.5rem; text-align: center; border-right: 1px solid var(--cream-dark); }
+  .feature-item:last-child { border-right: none; }
+  .feature-icon { font-size: 32px; margin-bottom: 1rem; color: var(--red); }
+  .feature-title { font-family: var(--font-display); font-size: 18px; margin-bottom: 0.5rem; }
+  .feature-desc { font-size: 13px; color: var(--gray); }
+  .branch-preview { padding: 3rem 2rem 4rem; background: var(--cream); }
+  .branch-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; max-width: 860px; margin: 2rem auto 0; }
+  .bcard { background: var(--white); border-radius: 4px; border: 1px solid rgba(0,0,0,0.07); overflow: hidden; }
+  .bcard-top { background: var(--red-dark); padding: 1.25rem; color: white; }
+  .bcard-top h4 { font-family: var(--font-display); font-size: 18px; }
+  .bcard-top p { font-size: 12px; opacity: 0.7; margin-top: 2px; }
+  .bcard-body { padding: 1rem 1.25rem; font-size: 13px; color: var(--gray); }
+  .bcard-body strong { color: var(--charcoal); }
+  .home-cta-strip { background: var(--red-dark); padding: 3.5rem 2rem; text-align: center; }
+  .home-cta-strip h2 { font-family: var(--font-display); font-size: 36px; color: white; margin-bottom: 0.5rem; }
+  .home-cta-strip h2 em { color: var(--gold-light); }
+  .home-cta-strip p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: flex; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .time-slots { grid-template-columns: repeat(3,1fr); }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item.featured { grid-column: span 2; }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">Krislaw <span>Kitchen</span></div>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a>
+    <a href="#" onclick="showPage('about')" id="nav-about">About</a>
+    <a href="#" onclick="showPage('menu')" id="nav-menu">Menu</a>
+    <a href="#" onclick="showPage('branches')" id="nav-branches">Branches</a>
+    <a href="#" onclick="showPage('gallery')" id="nav-gallery">Gallery</a>
+    <a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a>
+    <a href="#" onclick="showPage('reservations')" class="nav-cta">Reserve a Table</a>
+  </div>
+</nav>
+
+<!-- ═══════════════ HOME ═══════════════ -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-accent"></div>
+    <div class="hero-tag">Est. 2024 · Nigeria</div>
+    <h1>Krislaw<br><em>Kitchen</em></h1>
+    <div class="hero-subtitle">A Kitchen with a Mandate</div>
+    <div class="hero-badges">
+      <span class="hero-badge live"><span class="live-dot"></span> Open Now</span>
+      <span class="hero-badge">3 Branches</span>
+      <span class="hero-badge">★ Top Rated</span>
+      <span class="hero-badge">Quality · Quantity · Speed</span>
+    </div>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="showPage('reservations')">Reserve a Table</button>
+      <button class="btn-outline" onclick="showPage('menu')">View Our Menu</button>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Branches</div></div>
+    <div class="stat"><div class="stat-num">3.9★</div><div class="stat-label">Top Rated</div></div>
+    <div class="stat"><div class="stat-num">₦500+</div><div class="stat-label">Meals from</div></div>
+    <div class="stat"><div class="stat-num">24+</div><div class="stat-label">Reviews</div></div>
+  </div>
+
+  <div class="features">
+    <div class="section-header" style="padding-bottom:0">
+      <div class="section-eyebrow">Why Choose Us</div>
+      <div class="section-title">The <em>Mandate</em></div>
+      <div class="section-body">Krislaw Kitchen is built on a simple promise — exceptional food, generous portions, served fast. Every branch, every time.</div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">🍽️</div>
+        <div class="feature-title">Quality First</div>
+        <div class="feature-desc">Fresh ingredients sourced daily. Every dish prepared with care and precision.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🍛</div>
+        <div class="feature-title">Big Portions</div>
+        <div class="feature-desc">We believe you should leave satisfied. Our portions are generous — always.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Fast Service</div>
+        <div class="feature-desc">Whether dine-in, takeaway or drive-through — we respect your time.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">💰</div>
+        <div class="feature-title">Affordable</div>
+        <div class="feature-desc">Full, delicious meals starting from just ₦500. Great food for everyone.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch-preview">
+    <div class="section-header" style="padding-bottom:0">
+      <div class="section-eyebrow">Locations</div>
+      <div class="section-title">Find Your <em>Nearest</em> Branch</div>
+    </div>
+    <div class="branch-row">
+      <div class="bcard">
+        <div class="bcard-top"><h4>EKSU Branch</h4><p>Ado Ekiti, Ekiti State</p></div>
+        <div class="bcard-body">
+          <p><strong>Rating:</strong> 3.6 ★ (8 reviews)</p>
+          <p style="margin-top:4px"><strong>Price range:</strong> ₦6,000 – ₦8,000</p>
+          <p style="margin-top:4px"><strong>Services:</strong> Takeaway</p>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="bcard-top"><h4>Oye Branch</h4><p>Oye, Ekiti State</p></div>
+        <div class="bcard-body">
+          <p><strong>Rating:</strong> 3.5 ★ (2 reviews)</p>
+          <p style="margin-top:4px"><strong>Specialty:</strong> Butcher shop & fresh cuts</p>
+          <p style="margin-top:4px"><strong>Services:</strong> Fresh meats</p>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="bcard-top"><h4>Omu-Aran Branch</h4><p>Omu-Aran, Kwara State</p></div>
+        <div class="bcard-body">
+          <p><strong>Rating:</strong> 3.9 ★ (14 reviews)</p>
+          <p style="margin-top:4px"><strong>Price range:</strong> ₦1,000 – ₦2,000</p>
+          <p style="margin-top:4px"><strong>Services:</strong> Dine-in · Drive-through</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-cta-strip">
+    <h2>Ready to <em>Eat?</em></h2>
+    <p>Book your table in advance or come in — we're always ready for you.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <button class="btn-primary" onclick="showPage('reservations')">Make a Reservation</button>
+      <button class="btn-outline" onclick="showPage('contact')">Contact Us</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div class="section-eyebrow" style="justify-content:center">Our Story</div>
+    <h1>A Kitchen with<br>a <em>Mandate</em></h1>
+    <p>More than a restaurant — a movement to bring quality, affordable food to students and communities across Nigeria.</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-block">
+      <div class="about-icon">🌱</div>
+      <h3>How It Started</h3>
+      <p>Krislaw Kitchen was founded with one goal: to provide students and everyday Nigerians with food that is filling, delicious, and affordable. What began as a single kitchen on a university campus has grown into a multi-branch operation registered with the CAC of Nigeria.</p>
+    </div>
+    <div class="about-block">
+      <div class="about-icon">📍</div>
+      <h3>Growing Fast</h3>
+      <p>Officially incorporated as Krislaw Kitchen Ltd (RC-7674271) in July 2024, the brand quickly expanded from its EKSU roots to open branches in Oye and Omu-Aran, Kwara State — serving hundreds of customers daily across three locations.</p>
+    </div>
+    <div class="about-block">
+      <div class="about-icon">👨‍🍳</div>
+      <h3>Our People</h3>
+      <p>Our kitchen teams are trained to uphold the brand's core promise at every branch. Fast hands, warm hearts, and a genuine love for Nigerian cuisine — that's what makes a Krislaw meal different from the rest.</p>
+    </div>
+    <div class="about-block">
+      <div class="about-icon">🎯</div>
+      <h3>The Vision</h3>
+      <p>To become the most trusted and beloved food brand among Nigerian students and urban communities — known for consistency, value, and the kind of food that feels like home, no matter which branch you walk into.</p>
+    </div>
+  </div>
+
+  <div class="values-section">
+    <h2>Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h4>Quality</h4>
+        <p>Every ingredient is chosen with care. No compromises on freshness or taste.</p>
+      </div>
+      <div class="value-card">
+        <h4>Quantity</h4>
+        <p>You should leave full. Our portions are designed to satisfy, not disappoint.</p>
+      </div>
+      <div class="value-card">
+        <h4>Speed</h4>
+        <p>We respect your time. Whether dine-in or takeaway, service is always fast.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MENU ═══════════════ -->
+<div id="page-menu" class="page">
+  <div class="menu-hero">
+    <div class="section-eyebrow" style="justify-content:center;color:rgba(255,255,255,0.5)">What We Serve</div>
+    <h1>Our <em>Menu</em></h1>
+    <p>Fresh, generous, affordable — served daily at all branches</p>
+  </div>
+
+  <div class="menu-branch-tabs">
+    <button class="menu-tab active" onclick="switchMenu(this,'omu')">Omu-Aran Branch</button>
+    <button class="menu-tab" onclick="switchMenu(this,'eksu')">EKSU Branch</button>
+    <button class="menu-tab" onclick="switchMenu(this,'oye')">Oye Branch</button>
+  </div>
+
+  <div id="menu-omu" class="menu-content active">
+    <div class="menu-section">
+      <div class="menu-note">💡 Omu-Aran branch offers dine-in and drive-through. Prices below are starting prices — upgrades available.</div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Rice Dishes</div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Plain Rice & Stew</div><div class="item-desc">Soft white rice with rich tomato stew</div></div><div class="item-price">₦500</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Jollof Rice</div><div class="item-desc">Classic Nigerian jollof, cooked in tomato base with spices</div></div><div class="item-price">₦700</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Fried Rice</div><div class="item-desc">Mixed vegetables, eggs and spiced fried rice</div></div><div class="item-price">₦800</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Fried Rice + Chicken</div><div class="item-desc">Fried rice served with a full piece of grilled chicken</div></div><div class="item-price">₦1,000</div></div>
+      </div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Proteins & Sides</div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Chicken (1 piece)</div><div class="item-desc">Marinated, fried or grilled</div></div><div class="item-price">₦400</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Fish</div><div class="item-desc">Fried tilapia or catfish</div></div><div class="item-price">₦500</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Special Protein</div><div class="item-desc">Assorted meat selection of the day</div></div><div class="item-price">₦1,500</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Moi Moi</div><div class="item-desc">Steamed bean pudding</div></div><div class="item-price">₦200</div></div>
+      </div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Full Combos</div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Student Special</div><div class="item-desc">Rice of choice + 1 protein + drink</div></div><div class="item-price">₦1,200</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Full Meal Combo</div><div class="item-desc">Rice + assorted protein + salad + drink</div></div><div class="item-price">₦2,000</div></div>
+      </div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Drinks</div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Soft Drinks</div><div class="item-desc">Coke, Fanta, Sprite, Pepsi</div></div><div class="item-price">₦200</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Water (chilled)</div></div><div class="item-price">₦100</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Zobo / Kunu</div><div class="item-desc">Traditional Nigerian drinks</div></div><div class="item-price">₦150</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="menu-eksu" class="menu-content">
+    <div class="menu-section">
+      <div class="menu-note">📍 EKSU Branch caters primarily to students and staff of Ekiti State University. Takeaway available.</div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Rice & Swallow</div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Party Jollof Rice</div><div class="item-desc">Smoky jollof with assorted proteins</div></div><div class="item-price">₦6,000</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">White Rice & Egusi</div><div class="item-desc">Rice with rich egusi soup</div></div><div class="item-price">₦6,500</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Pounded Yam & Egusi</div><div class="item-desc">Freshly pounded with assorted meat</div></div><div class="item-price">₦7,000</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Full Catering Pack</div><div class="item-desc">Event-size tray — enquire for price</div></div><div class="item-price">₦8,000+</div></div>
+      </div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Snacks & Light Bites</div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Meat Pie</div></div><div class="item-price">₦500</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Spring Rolls (4 pcs)</div></div><div class="item-price">₦800</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Puff Puff (6 pcs)</div></div><div class="item-price">₦300</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="menu-oye" class="menu-content">
+    <div class="menu-section">
+      <div class="menu-note">🥩 Oye Branch specialises in fresh cuts and butcher services. All meat is sourced fresh daily.</div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Fresh Meats</div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Beef (per kg)</div><div class="item-desc">Choice cuts, freshly butchered</div></div><div class="item-price">₦3,500/kg</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Goat Meat (per kg)</div><div class="item-desc">Local goat, freshly cut to order</div></div><div class="item-price">₦4,000/kg</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Chicken (whole)</div><div class="item-desc">Live-dressed or fresh frozen</div></div><div class="item-price">₦3,000</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Turkey (whole)</div></div><div class="item-price">₦8,000+</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Fish (per kg)</div><div class="item-desc">Catfish, tilapia, mackerel</div></div><div class="item-price">₦2,500/kg</div></div>
+      </div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Butcher Services</div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Custom Cuts</div><div class="item-desc">Bring your own, we'll cut and dress</div></div><div class="item-price">₦500</div></div>
+        <div class="menu-item"><div class="item-info"><div class="item-name">Event Bulk Order</div><div class="item-desc">Call ahead for large orders</div></div><div class="item-price">Enquire</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ BRANCHES ═══════════════ -->
+<div id="page-branches" class="page">
+  <div class="branches-hero">
+    <div class="section-eyebrow" style="justify-content:center;color:rgba(255,255,255,0.5)">Find Us</div>
+    <h1>Our <em>Branches</em></h1>
+  </div>
+
+  <div class="branches-grid">
+    <div class="branch-card-full">
+      <div class="branch-card-header">
+        <h3>EKSU Branch</h3>
+        <p>Ado Ekiti, Ekiti State</p>
+        <div class="branch-rating">★ <span>3.6</span></div>
+      </div>
+      <div class="branch-details">
+        <div class="branch-detail-row">
+          <div class="detail-icon">📍</div>
+          <div><div class="detail-label">Address</div><div class="detail-value">Ekiti State University Campus Area, Ado Ekiti</div></div>
+        </div>
+        <div class="branch-detail-row">
+          <div class="detail-icon">🕐</div>
+          <div><div class="detail-label">Hours</div><div class="detail-value">Mon–Sat: 7:00 AM – 9:00 PM</div></div>
+        </div>
+        <div class="branch-detail-row">
+          <div class="detail-icon">💰</div>
+          <div><div class="detail-label">Price Range</div><div class="detail-value">₦6,000 – ₦8,000</div></div>
+        </div>
+        <div class="branch-detail-row">
+          <div class="detail-icon">⭐</div>
+          <div><div class="detail-label">Reviews</div><div class="detail-value">3.6 stars · 8 customer reviews</div></div>
+        </div>
+      </div>
+      <div class="branch-tags">
+        <span class="tag">Takeaway</span>
+        <span class="tag">Student Friendly</span>
+        <span class="tag">Fast Service</span>
+      </div>
+    </div>
+
+    <div class="branch-card-full">
+      <div class="branch-card-header">
+        <h3>Oye Branch</h3>
+        <p>Oye, Ekiti State</p>
+        <div class="branch-rating">★ <span>3.5</span></div>
+      </div>
+      <div class="branch-details">
+        <div class="branch-detail-row">
+          <div class="detail-icon">📍</div>
+          <div><div class="detail-label">Address</div><div class="detail-value">Oye Town, Ekiti State</div></div>
+        </div>
+        <div class="branch-detail-row">
+          <div class="detail-icon">🕐</div>
+          <div><div class="detail-label">Hours</div><div class="detail-value">Mon–Sat: 7:00 AM – 7:00 PM</div></div>
+        </div>
+        <div class="branch-detail-row">
+          <div class="detail-icon">🥩</div>
+          <div><div class="detail-label">Specialty</div><div class="detail-value">Fresh meats & butcher services</div></div>
+        </div>
+        <div class="branch-detail-row">
+          <div class="detail-icon">⭐</div>
+          <div><div class="detail-label">Reviews</div><div class="detail-value">3.5 stars · 2 customer reviews</div></div>
+        </div>
+      </div>
+      <div class="branch-tags">
+        <span class="tag">Butcher Shop</span>
+        <span class="tag">Fresh Cuts</span>
+        <span class="tag">Bulk Orders</span>
+      </div>
+    </div>
+
+    <div class="branch-card-full">
+      <div class="branch-card-header" style="background: #4A0F0F;">
+        <h3>Omu-Aran Branch</h3>
+        <p>Omu-Aran, Kwara State</p>
+        <div class="branch-rating">★ <span>3.9</span></div>
+      </div>
+      <div class="branch-details">
+        <div class="branch-detail-row">
+          <div class="detail-icon">📍</div>
+          <div><div class="detail-label">Address</div><div class="detail-value">Roundabout Area, Omu-Aran, Kwara State</div></div>
+        </div>
+        <div class="branch-detail-row">
+          <div class="detail-icon">🕐</div>
+          <div><div class="detail-label">Hours</div><div class="detail-value">Mon–Sun: 7:00 AM – 10:00 PM</div></div>
+        </div>
+        <div class="branch-detail-row">
+          <div class="detail-icon">💰</div>
+          <div><div class="detail-label">Price Range</div><div class="detail-value">₦1,000 – ₦2,000</div></div>
+        </div>
+        <div class="branch-detail-row">
+          <div class="detail-icon">⭐</div>
+          <div><div class="detail-label">Reviews</div><div class="detail-value">3.9 stars · 14 customer reviews</div></div>
+        </div>
+      </div>
+      <div class="branch-tags">
+        <span class="tag">Dine-In</span>
+        <span class="tag">Drive-Through</span>
+        <span class="tag">Open Sundays</span>
+        <span class="tag">Most Popular</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ GALLERY ═══════════════ -->
+<div id="page-gallery" class="page">
+  <div class="gallery-hero">
+    <div class="section-eyebrow" style="justify-content:center;color:rgba(255,255,255,0.5)">Food & Ambience</div>
+    <h1>Our <em>Gallery</em></h1>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item g1 featured">
+      <div class="gallery-placeholder">🍛<span>Signature Dishes</span></div>
+      <div class="gallery-label">Our Signature Jollof Rice</div>
+    </div>
+    <div class="gallery-item g2">
+      <div class="gallery-placeholder">🥘<span>Soups & Stews</span></div>
+      <div class="gallery-label">Egusi Soup</div>
+    </div>
+    <div class="gallery-item g3">
+      <div class="gallery-placeholder">🍗<span>Proteins</span></div>
+      <div class="gallery-label">Grilled Chicken</div>
+    </div>
+    <div class="gallery-item g4">
+      <div class="gallery-placeholder">🏪<span>EKSU Branch</span></div>
+      <div class="gallery-label">EKSU Branch Interior</div>
+    </div>
+    <div class="gallery-item g5">
+      <div class="gallery-placeholder">🥩<span>Fresh Cuts</span></div>
+      <div class="gallery-label">Oye Butcher Shop</div>
+    </div>
+    <div class="gallery-item g6">
+      <div class="gallery-placeholder">🍽️<span>Plated</span></div>
+      <div class="gallery-label">Full Combo Meal</div>
+    </div>
+    <div class="gallery-item g7">
+      <div class="gallery-placeholder">🚗<span>Drive-Through</span></div>
+      <div class="gallery-label">Omu-Aran Drive-Through</div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:1rem 2rem 3rem;color:var(--gray);font-size:13px;">
+    Follow us on <a href="https://instagram.com/krislawkitchen" style="color:var(--red);text-decoration:none;font-weight:600">@krislawkitchen</a> for the latest food photos
+  </div>
+</div>
+
+<!-- ═══════════════ RESERVATIONS ═══════════════ -->
+<div id="page-reservations" class="page">
+  <div class="res-hero">
+    <div class="section-eyebrow" style="justify-content:center;color:rgba(255,255,255,0.5)">Book Ahead</div>
+    <h1>Reserve a <em>Table</em></h1>
+    <p>Secure your spot — we'll have everything ready when you arrive</p>
+  </div>
+
+  <div class="res-container">
+    <div class="res-form">
+      <div class="res-form-header">
+        <h3>Make a Reservation</h3>
+        <p>Fill in the details below and we'll confirm within 30 minutes</p>
+      </div>
+      <div class="res-form-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="fname" placeholder="e.g. Amara" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="lname" placeholder="e.g. Okafor" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="e.g. 08012345678" />
+          </div>
+          <div class="form-group">
+            <label>Email (optional)</label>
+            <input type="email" id="email" placeholder="you@example.com" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Select Branch</label>
+          <select id="branch">
+            <option value="">— Choose a branch —</option>
+            <option>Omu-Aran Branch (Kwara State) — Dine-in & Drive-through</option>
+            <option>EKSU Branch (Ado Ekiti) — Takeaway</option>
+            <option>Oye Branch (Ekiti State) — Butcher & Fresh Meats</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="resdate" />
+          </div>
+          <div class="form-group">
+            <label>Occasion (optional)</label>
+            <select id="occasion">
+              <option value="">— Select —</option>
+              <option>Regular meal</option>
+              <option>Birthday celebration</option>
+              <option>Business lunch</option>
+              <option>Family gathering</option>
+              <option>Date night</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Number of Guests</label>
+          <div class="guests-row">
+            <div class="guest-opt" onclick="selectGuest(this)">1</div>
+            <div class="guest-opt" onclick="selectGuest(this)">2</div>
+            <div class="guest-opt selected" onclick="selectGuest(this)">3–4</div>
+            <div class="guest-opt" onclick="selectGuest(this)">5–6</div>
+            <div class="guest-opt" onclick="selectGuest(this)">7–10</div>
+            <div class="guest-opt" onclick="selectGuest(this)">10+</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Preferred Time</label>
+          <div class="time-slots">
+            <div class="time-slot" onclick="selectTime(this)">11:00 AM</div>
+            <div class="time-slot" onclick="selectTime(this)">12:00 PM</div>
+            <div class="time-slot selected" onclick="selectTime(this)">1:00 PM</div>
+            <div class="time-slot" onclick="selectTime(this)">2:00 PM</div>
+            <div class="time-slot" onclick="selectTime(this)">3:00 PM</div>
+            <div class="time-slot unavailable">4:00 PM</div>
+            <div class="time-slot" onclick="selectTime(this)">5:00 PM</div>
+            <div class="time-slot" onclick="selectTime(this)">6:00 PM</div>
+            <div class="time-slot" onclick="selectTime(this)">7:00 PM</div>
+            <div class="time-slot unavailable">8:00 PM</div>
+            <div class="time-slot" onclick="selectTime(this)">8:30 PM</div>
+            <div class="time-slot" onclick="selectTime(this)">9:00 PM</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Special Requests</label>
+          <textarea id="notes" placeholder="Dietary needs, seating preferences, birthday arrangements..."></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="submitReservation()">Confirm Reservation</button>
+        <div id="res-success" class="success-msg">
+          <h4>🎉 Reservation Confirmed!</h4>
+          <p>Thank you! We'll call you within 30 minutes to confirm your booking.<br>We look forward to seeing you at Krislaw Kitchen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-info">
+      <div class="res-info-card">
+        <h4>📞 Prefer to call?</h4>
+        <p>You can also call us directly at any branch to make your reservation by phone.</p>
+      </div>
+      <div class="res-info-card">
+        <h4>⏰ Cancellation policy</h4>
+        <p>Please cancel at least 2 hours before your reservation to allow us to accommodate other guests.</p>
+      </div>
+      <div class="res-info-card">
+        <h4>🎂 Special occasions</h4>
+        <p>Planning a birthday or event? Mention it in special requests — we'll make it memorable.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<div id="page-contact" class="page">
+  <div class="contact-hero">
+    <div class="section-eyebrow" style="justify-content:center;color:rgba(255,255,255,0.5)">Get In Touch</div>
+    <h1>Contact <em>Us</em></h1>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>We'd love to hear from you</h2>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="detail-label">Headquarters</div>
+          <div class="contact-value">Roundabout Area, Omu-Aran, Kwara State</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="detail-label">Phone</div>
+          <div class="contact-value">Enquire via social media</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="detail-label">Business Hours</div>
+          <div class="contact-value">Mon – Sun · 7:00 AM – 10:00 PM</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🏢</div>
+        <div>
+          <div class="detail-label">CAC Registration</div>
+          <div class="contact-value">RC-7674271 · Incorporated July 2024</div>
+        </div>
+      </div>
+      <div class="social-links">
+        <h4>Follow Us</h4>
+        <div class="social-row">
+          <a href="https://instagram.com/krislawkitchen" class="social-link" target="_blank">📸 Instagram</a>
+          <a href="https://tiktok.com/@krislawkitchen" class="social-link" target="_blank">🎵 TikTok</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h3>Send us a message</h3>
+      <div class="form-row">
+        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name" /></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="08012345678" /></div>
+      </div>
+      <div class="form-group"><label>Subject</label>
+        <select>
+          <option>General enquiry</option>
+          <option>Catering & bulk orders</option>
+          <option>Complaint or feedback</option>
+          <option>Partnership / business</option>
+          <option>Career opportunity</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Branch (if applicable)</label>
+        <select>
+          <option>All branches / general</option>
+          <option>EKSU Branch — Ado Ekiti</option>
+          <option>Oye Branch — Ekiti State</option>
+          <option>Omu-Aran Branch — Kwara State</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea placeholder="How can we help you?" style="min-height:110px"></textarea></div>
+      <button class="submit-btn" onclick="submitContact()">Send Message</button>
+      <div id="contact-success" class="success-msg">
+        <h4>✅ Message Sent!</h4>
+        <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2024 <strong>Krislaw Kitchen Ltd</strong> · RC-7674271 · A Kitchen with a Mandate</p>
+  <p style="margin-top:6px">EKSU Branch · Oye Branch · Omu-Aran Branch</p>
+</footer>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    const navEl = document.getElementById('nav-' + name);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo(0,0);
+  }
+
+  function switchMenu(tab, id) {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-content').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('menu-' + id).classList.add('active');
+  }
+
+  function selectGuest(el) {
+    document.querySelectorAll('.guest-opt').forEach(g => g.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  function selectTime(el) {
+    if (el.classList.contains('unavailable')) return;
+    document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  function submitReservation() {
+    const fname = document.getElementById('fname').value.trim();
+    const branch = document.getElementById('branch').value;
+    const date = document.getElementById('resdate').value;
+    if (!fname || !branch || !date) {
+      alert('Please fill in your name, branch, and date to complete your reservation.');
+      return;
+    }
+    document.getElementById('res-success').style.display = 'block';
+    document.getElementById('res-success').scrollIntoView({behavior:'smooth'});
+  }
+
+  function submitContact() {
+    document.getElementById('contact-success').style.display = 'block';
+    document.getElementById('contact-success').scrollIntoView({behavior:'smooth'});
+  }
+
+  const today = new Date().toISOString().split('T')[0];
+  const dateInput = document.getElementById('resdate');
+  if (dateInput) { dateInput.min = today; dateInput.value = today; }
+</script>
+</body>
+</html>
